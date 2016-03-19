@@ -27,7 +27,7 @@ def title_length(data):
 
 def user_age(data):
     return pd.DataFrame.from_dict({"UserAge": (data["PostCreationDate"]
-            - data["OwnerCreationDate"]).apply(lambda x: x.total_seconds())})
+            - data["OwnerCreationDate"]).apply(lambda x: x/np.timedelta64(1,'s'))})
 
 ###########################################################
 
